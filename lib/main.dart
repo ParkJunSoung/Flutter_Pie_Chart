@@ -1,139 +1,28 @@
-import 'dart:io';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pie_chart/pie_chart.dart';
-
-
-void enablePlatformOverrideForDesktop() {
-  if (!kIsWeb && (Platform.isMacOS || Platform.isWindows || Platform.isLinux)) {
-    debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
-  }
-}
+import 'package:flutter_ui_rally/ui/home.dart';
+import 'package:flutter_ui_rally/provider/provider_data.dart';
+import 'package:flutter_ui_rally/ui/bills_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  enablePlatformOverrideForDesktop();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Pie Chart Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
-      darkTheme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        brightness: Brightness.dark,
-      ),
-      home: HomePage(),
-    );
-  }
-}
-
-enum LegendShape { Circle, Rectangle }
-
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  Map<String, double> dataMap = {
-    "Flutter": 5,
-    "React": 3,
-    "Xamarin": 2,
-    "Ionic": 2,
-  };
-  List<Color> colorList = [
-    Colors.red,
-    Colors.green,
-    Colors.blue,
-    Colors.yellow,
-  ];
-
-  ChartType _chartType = ChartType.ring;
-  bool _showCenterText = true;
-  double _ringStrokeWidth = 32;
-  double _chartLegendSpacing = 32;
-
-  bool _showLegendsInRow = false;
-  bool _showLegends = true;
-
-  bool _showChartValueBackground = true;
-  bool _showChartValues = true;
-  bool _showChartValuesInPercentage = false;
-  bool _showChartValuesOutside = true;
-
-  LegendShape _legendShape = LegendShape.Circle;
-  LegendPosition _legendPosition = LegendPosition.right;
-
-  int key = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    final chart = PieChart(
-      key: ValueKey(key),
-      dataMap: dataMap,
-      animationDuration: Duration(milliseconds: 800),
-      chartLegendSpacing: _chartLegendSpacing,
-      chartRadius: MediaQuery.of(context).size.width / 3.2 > 300
-          ? 300
-          : MediaQuery.of(context).size.width / 3.2,
-      colorList: colorList,
-      initialAngleInDegree: 0,
-      chartType: _chartType,
-      centerText: _showCenterText ? "HYBRID" : null,
-      legendOptions: LegendOptions(
-        showLegendsInRow: _showLegendsInRow,
-        legendPosition: _legendPosition,
-        showLegends: _showLegends,
-        legendShape: _legendShape == LegendShape.Circle
-            ? BoxShape.circle
-            : BoxShape.rectangle,
-        legendTextStyle: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      chartValuesOptions: ChartValuesOptions(
-        showChartValueBackground: _showChartValueBackground,
-        showChartValues: _showChartValues,
-        showChartValuesInPercentage: _showChartValuesInPercentage,
-        showChartValuesOutside: _showChartValuesOutside,
-      ),
-      ringStrokeWidth: _ringStrokeWidth,
-      emptyColor: Colors.grey,
-    );
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Pie Chart @apgapg"),
-        actions: [
-          RaisedButton(
-            onPressed: () {
-              setState(() {
-                key = key + 1;
-              });
-            },
-            child: Text("Reload".toUpperCase()),
-          ),
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider<ReallyProvider>(
+              create: (_) => ReallyProvider()),
         ],
-      ),
-      body: LayoutBuilder(
-        builder: (_, constraints) {
-            return Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Flexible(
-                  flex: 2,
-                  fit: FlexFit.tight,
-                  child: chart,
-                ),
-              ],
-            );
-          },
-      ),
-    );
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: BillsPage(),
+        ));
   }
 }
