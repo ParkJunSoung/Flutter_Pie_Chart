@@ -17,7 +17,7 @@ class _BillsOverviewState extends State<BillsOverview> {
   Widget build(BuildContext context) {
     var list = context.read<ReallyProvider>();
     return Container(
-      color: Colors.grey,
+      color: Color.fromRGBO(49, 50, 55, 1),
       child: Column(
         children: [
           ListView(
@@ -52,14 +52,14 @@ class _BillsOverviewState extends State<BillsOverview> {
               scrollDirection: Axis.vertical,
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount:
-                  list.billsList.length == null ? 0 : list.billsList.length,
+              itemCount: 3,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                     height: 90,
                     child: Card(
+                      color: Color.fromRGBO(49, 50, 55, 1),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -73,23 +73,30 @@ class _BillsOverviewState extends State<BillsOverview> {
                             children: [
                               Column(
                                 children: [
-                                  Text('${list.billsList[index]}'),
-                                  Text('${list.billsDate[index]}'),
+                                  Padding(
+                                    padding: const EdgeInsets.all(15.0),
+                                    child: Text('${list.billsList[index]}',style: TextStyle(color: Colors.white,fontSize: 15),),
+                                  ),
+                                  Text('${list.billsDate[index]}',style: TextStyle(color: Colors.white,fontSize: 20),),
                                 ],
                               ),
                             Padding(
-                              padding: const EdgeInsets.only(right: 30),
-                              child: Text('-\$${list.billsAmount[index]}'),
+                              padding: const EdgeInsets.only(left:100),
+                              child: Text('-\$${list.billsAmount[index]}',style: TextStyle(color: Colors.white,fontSize: 30),),
                             ),
-                              Icon(Icons.list),
-
+                              Icon(Icons.list,color: Colors.white,size: 25,),
                             ],
                           ),
                         ],
                       ),
                     ),
                   );
-              })
+              }),
+          ElevatedButton(onPressed: (){},
+              child: Text('SEE ALL',style: TextStyle(color: Colors.greenAccent)),
+              style: ElevatedButton.styleFrom(
+              primary: Color.fromRGBO(49, 50, 55, 1)),
+          )
         ],
       ),
     );

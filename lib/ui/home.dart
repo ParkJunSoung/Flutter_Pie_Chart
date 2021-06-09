@@ -19,9 +19,9 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[
-    AccountsOverview(),
-    BillsOverview(),
-    Text('Search'),
+    OverviewPage(),
+    BillsPage(),
+    AccountsPage(),
   ];
 
   @override
@@ -33,13 +33,7 @@ class _HomeState extends State<Home> {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Colors.transparent,
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 20,
-                    color: Colors.black.withOpacity(.1),
-                  )
-                ],
+                color: Color.fromRGBO(49, 50, 55, 1),
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
@@ -53,7 +47,7 @@ class _HomeState extends State<Home> {
                       iconSize: 24,
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                       duration: Duration(milliseconds: 400),
-                      tabBackgroundColor: Colors.grey[100],
+                      tabBackgroundColor: Color.fromRGBO(49, 50, 55, 1),
                       color: Colors.black,
                       tabs: [
                         GButton(

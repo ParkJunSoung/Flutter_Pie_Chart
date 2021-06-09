@@ -28,7 +28,7 @@ class _AlertsOverviewState extends State<AlertsOverview> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 100),
+                      padding: const EdgeInsets.only(left: 250),
                       child: ElevatedButton(
                           onPressed: () {},
                           child: Text('SEE ALL',style: TextStyle(color: Colors.greenAccent),),

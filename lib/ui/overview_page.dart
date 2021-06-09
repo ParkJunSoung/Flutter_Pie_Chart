@@ -17,6 +17,8 @@ class _OverviewPageState extends State<OverviewPage> {
       child: Column(
           children: [
             AlertsOverview(),
+            BillsOverview(),
+            BillsOverview(),
           ],
       ),
     );
