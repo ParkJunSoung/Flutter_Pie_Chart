@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_rally/ui/accounts_page.dart';
 import 'package:flutter_ui_rally/ui/home.dart';
 import 'package:flutter_ui_rally/provider/provider_data.dart';
-import 'package:flutter_ui_rally/ui/bills_page.dart';
 import 'package:provider/provider.dart';
+
+import 'ui/overview_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: AccountsPage(),
+          home: Home(),
         ));
   }
 }

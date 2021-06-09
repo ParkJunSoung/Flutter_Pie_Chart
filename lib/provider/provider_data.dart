@@ -53,11 +53,11 @@ class ReallyProvider extends ChangeNotifier {
   };
 
   List<String> billsDate = [
-    "Jan 29",
-    "Feb 9",
-    "Feb 22",
-    "March 2",
-    "March 10",
+    "Due Jan 29",
+    "Due Feb 9",
+    "Due Feb 22",
+    "Due March 2",
+    "Due March 10",
   ];
 
   List<String> billsList = [
