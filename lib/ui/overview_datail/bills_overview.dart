@@ -81,7 +81,7 @@ class _BillsOverviewState extends State<BillsOverview> {
                                 ],
                               ),
                             Padding(
-                              padding: const EdgeInsets.only(left:100),
+                              padding: const EdgeInsets.only(right: 10),
                               child: Text('-\$${list.billsAmount[index]}',style: TextStyle(color: Colors.white,fontSize: 30),),
                             ),
                               Icon(Icons.list,color: Colors.white,size: 25,),

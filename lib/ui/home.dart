@@ -1,14 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_rally/provider/provider_data.dart';
 import 'package:flutter_ui_rally/ui/accounts_page.dart';
 import 'package:flutter_ui_rally/ui/bills_page.dart';
-import 'package:flutter_ui_rally/ui/overview_datail/AlertsOverview.dart';
-import 'package:flutter_ui_rally/ui/overview_datail/account_overview.dart';
-import 'package:flutter_ui_rally/ui/overview_datail/bills_overview.dart';
 import 'package:flutter_ui_rally/ui/overview_page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
