@@ -75,16 +75,32 @@ class _AccountOverviewState extends State<AccountOverview> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(15.0),
-                                  child: Text('${list.billsList[index]}',style: TextStyle(color: Colors.white,fontSize: 15),),
+                                  child: Text(
+                                    '${list.billsList[index]}',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 15),
+                                  ),
                                 ),
-                                Text('${list.billsDate[index]}',style: TextStyle(color: Colors.white,fontSize: 20),),
+                                Text(
+                                  '${list.billsDate[index]}',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left:100),
-                              child: Text('-\$${list.billsAmount[index]}',style: TextStyle(color: Colors.white,fontSize: 30),),
+                              padding: const EdgeInsets.only(left: 100),
+                              child: Text(
+                                '-\$${list.billsAmount[index]}',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 30),
+                              ),
                             ),
-                            Icon(Icons.list,color: Colors.white,size: 25,),
+                            Icon(
+                              Icons.list,
+                              color: Colors.white,
+                              size: 25,
+                            ),
                           ],
                         ),
                       ],
@@ -92,8 +108,9 @@ class _AccountOverviewState extends State<AccountOverview> {
                   ),
                 );
               }),
-          ElevatedButton(onPressed: (){},
-            child: Text('SEE ALL',style: TextStyle(color: Colors.greenAccent)),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text('SEE ALL', style: TextStyle(color: Colors.greenAccent)),
             style: ElevatedButton.styleFrom(
                 primary: Color.fromRGBO(49, 50, 55, 1)),
           )
