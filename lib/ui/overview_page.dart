@@ -15,11 +15,11 @@ class _OverviewPageState extends State<OverviewPage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-          children: [
-            AlertsOverview(),
-            BillsOverview(),
-            BillsOverview(),
-          ],
+        children: [
+          AlertsOverview(),
+          BillsOverview(),
+          BillsOverview(),
+        ],
       ),
     );
   }

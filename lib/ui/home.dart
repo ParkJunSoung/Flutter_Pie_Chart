@@ -31,7 +31,8 @@ class _HomeState extends State<Home> {
                 color: Color.fromRGBO(49, 50, 55, 1),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
                 child: Row(
                   children: [
                     GNav(
@@ -40,7 +41,8 @@ class _HomeState extends State<Home> {
                       gap: 8,
                       activeColor: Colors.black,
                       iconSize: 24,
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                       duration: Duration(milliseconds: 400),
                       tabBackgroundColor: Color.fromRGBO(49, 50, 55, 1),
                       color: Colors.black,
